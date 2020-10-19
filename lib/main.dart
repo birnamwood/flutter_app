@@ -193,9 +193,9 @@ class _ItemDetails extends State<ItemDetailsPage> {
   void getItem() async {
     Response res = await get(item.link);
     dom.Document doc = dom.Document.html(res.body);
-    dom.Element hbody = doc.querySelector('.hbody');
-    dom.Element htitle = doc.querySelector('.newsTitle a');
-    dom.Element newslink = doc.querySelector('.newsLink');
+    dom.Element hbody = doc.querySelector('.pickupMain_articleSummary');
+    dom.Element htitle = doc.querySelector('.pickupMain_articleTitle');
+    dom.Element newslink = doc.querySelector('.pickupMain_detailLink a');
     print(newslink.attributes['href']);
     setState(() {
       _widget = SingleChildScrollView(
